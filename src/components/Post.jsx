@@ -46,9 +46,9 @@ export function Post({ author, publishedAt, content }) {
             <header>
                 <div className={styles.author}>
                     <Avatar src={author.avatarUrl} />
-                    <div className={styles.authorInfo}>
-                        <strong>{author.name}</strong>
-                        <span>{author.role}</span>
+                    <div className={styles.authorInfo} data-qa="avatar-info" >
+                        <strong data-qa="avatar-name">{author.name}</strong>
+                        <span data-qa="avatar-role">{author.role}</span>
                     </div>
                 </div>
 
@@ -72,6 +72,7 @@ export function Post({ author, publishedAt, content }) {
             <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
                 <strong>Deixe seu feedback</strong>
                 <textarea
+                    data-qa="comment-input"
                     name="comment"
                     placeholder="Deixe um comentário"
                     value={newCommentText}
@@ -79,7 +80,7 @@ export function Post({ author, publishedAt, content }) {
                     required
                 />
                 <footer>
-                    <button type="submit">
+                    <button data-qa="publish-button" type="submit">
                         Publicar
                     </button>
                 </footer>
