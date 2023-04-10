@@ -21,8 +21,8 @@ export function Comment({ content, deleteComment }) {
     return (
         <div className={styles.comment}>
             <Avatar hasBorder={false} src="https://github.com/henriquemanieri.png" />
-            <div className={styles.commentBox}>
-                <div data-qa="content-box" className={styles.commentContent}>
+            <div data-qa="comment-box" className={styles.commentBox}>
+                <div data-qa="comment-info-box" className={styles.commentContent}>
                     <header>
                         <div className={styles.authorAndTime}>
                             <strong data-qa="comment-name">Kevin Malone</strong>
@@ -32,7 +32,7 @@ export function Comment({ content, deleteComment }) {
                             <Trash size={24} />
                         </button>
                     </header>
-                    <p>{content}</p>
+                    <p data-qa="comment-text" >{content}</p>
                 </div>
                 <footer>
                     <button data-qa="like-button" onClick={handleLikeCount}>
